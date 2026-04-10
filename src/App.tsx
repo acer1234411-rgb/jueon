@@ -50,7 +50,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTopOnPathChange />
-      <div className="min-h-screen flex flex-col selection:bg-secondary selection:text-white">
+      <div className="min-h-screen flex flex-col selection:bg-secondary selection:text-white overflow-x-hidden">
         {/* Progress Bar */}
         <motion.div
           className="fixed top-0 left-0 right-0 h-1 bg-secondary z-[60] origin-left"

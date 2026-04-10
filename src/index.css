@@ -10,8 +10,14 @@
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-background text-text-main font-sans;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 }
 

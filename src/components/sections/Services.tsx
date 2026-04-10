@@ -15,7 +15,7 @@ const iconMap: Record<string, any> = {
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div

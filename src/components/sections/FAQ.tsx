@@ -7,7 +7,7 @@ export default function FAQ() {
   const [openId, setOpenId] = useState<number | null>(1);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Left Side */}

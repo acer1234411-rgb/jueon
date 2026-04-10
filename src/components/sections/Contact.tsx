@@ -168,7 +168,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="flex flex-col lg:flex-row">
