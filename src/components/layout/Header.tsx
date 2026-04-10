@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Phone, Menu, X, ArrowUp, Wrench, Search } from "lucide-react";
+import { Phone, Menu, X, ArrowUp, Wrench, Search, Info, Settings, Heart, Star, MessageSquare } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { PHONE_NUMBER, COMPANY_NAME } from "../../constants";
 import Button from "../ui/Button";
@@ -19,11 +19,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "소개", href: "/#about" },
-    { name: "서비스", href: "/#services" },
-    { name: "유품/빈집정리", href: "/#specialized" },
-    { name: "이용후기", href: "/#testimonials" },
-    { name: "문의하기", href: "/#contact" },
+    { name: "소개", href: "/#about", icon: Info },
+    { name: "서비스", href: "/#services", icon: Settings },
+    { name: "유품/빈집정리", href: "/#specialized", icon: Heart },
+    { name: "이용후기", href: "/#testimonials", icon: Star },
+    { name: "문의하기", href: "/#contact", icon: MessageSquare },
   ];
 
   const scrollToTop = () => {
@@ -101,16 +101,20 @@ export default function Header() {
           className="absolute top-full left-0 right-0 bg-white shadow-lg border-t md:hidden"
         >
           <div className="flex flex-col p-4 gap-4">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-text-main font-medium py-2 border-b border-gray-100"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className="flex items-center gap-3 text-text-main font-medium py-3 border-b border-gray-100"
+                >
+                  <Icon size={18} className="text-gray-300" />
+                  {link.name}
+                </a>
+              );
+            })}
             <Link
               to="/inquiry-check"
               onClick={() => setIsMenuOpen(false)}
